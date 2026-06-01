@@ -11,9 +11,10 @@ The site highlights full-stack engineering, AI-enabled product work, professiona
 - Responsive single-page layout
 - Light and dark theme toggle
 - Animated hero role text
+- Scroll-triggered reveal animations
 - Resume download link
 - Experience timeline
-- Featured GitHub projects
+- Sticky-stacking GitHub project cards with expandable case studies
 - Skills and education sections
 - Email, GitHub, and LinkedIn links
 

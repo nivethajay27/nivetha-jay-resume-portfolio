@@ -71,6 +71,13 @@ const projects = [
       "AI-powered portfolio platform that tailors summaries and project framing for recruiters, saves shareable sessions, and supports PDF export.",
     tags: ["React", "TypeScript", "FastAPI", "Groq", "SQLite"],
     url: "https://github.com/nivethajay27/adaptive-ai-portfolio",
+    caseStudy: {
+      problem: "Recruiters and hiring teams often need different slices of the same portfolio story.",
+      built:
+        "Built adaptive summaries, shareable sessions, PDF export, and backend flows for AI-assisted portfolio framing.",
+      impact:
+        "Shows how product thinking, full-stack execution, and AI workflows can turn a static resume into a tailored experience.",
+    },
   },
   {
     title: "ShopSphere E-commerce Platform",
@@ -78,6 +85,13 @@ const projects = [
       "Full-featured commerce starter with product catalog, JWT auth, saved carts, checkout, admin CRUD, PostgreSQL, and Stripe payment intent support.",
     tags: ["Next.js", "Express", "PostgreSQL", "Stripe", "JWT"],
     url: "https://github.com/nivethajay27/shopsphere-ecommerce-platform",
+    caseStudy: {
+      problem: "Commerce apps need smooth customer flows and reliable admin operations behind the scenes.",
+      built:
+        "Created product browsing, authentication, cart persistence, checkout, admin CRUD, and Stripe payment intent support.",
+      impact:
+        "Demonstrates end-to-end product architecture across frontend, backend, database, and payments.",
+    },
   },
   {
     title: "FullStack AI Chatbot",
@@ -85,6 +99,13 @@ const projects = [
       "Authenticated chatbot app with persistent sessions, token tracking, streaming assistant responses, theme support, and PDF/image attachments.",
     tags: ["React", "Vite", "Express", "PostgreSQL", "JWT"],
     url: "https://github.com/nivethajay27/Fullstack_AIChatbot",
+    caseStudy: {
+      problem: "AI chat products need persistence, attachment handling, and clear user feedback to feel production-ready.",
+      built:
+        "Implemented auth, streaming responses, session history, token tracking, themes, and document/image attachment support.",
+      impact:
+        "Highlights practical LLM app engineering beyond a simple prompt box.",
+    },
   },
   {
     title: "Personalized Pixel Avatar",
@@ -92,6 +113,13 @@ const projects = [
       "TypeScript project focused on generating personalized pixel avatar experiences and interactive profile visuals.",
     tags: ["TypeScript", "UI", "Creative Tools"],
     url: "https://github.com/nivethajay27/personalized-pixel-avatar",
+    caseStudy: {
+      problem: "Personal profile visuals can feel generic when they do not respond to the user.",
+      built:
+        "Designed a TypeScript-based creative interface for generating personalized pixel avatar experiences.",
+      impact:
+        "Adds a playful UI systems project that shows range beyond conventional dashboards.",
+    },
   },
   {
     title: "AI-Powered Expense Tracker",
@@ -99,6 +127,13 @@ const projects = [
       "Expense tracking application concept centered on AI-assisted insights and practical personal finance workflows.",
     tags: ["JavaScript", "AI", "Product"],
     url: "https://github.com/nivethajay27/ai-powered-expense-tracker",
+    caseStudy: {
+      problem: "Expense tools collect data, but users still need help understanding what to do with it.",
+      built:
+        "Explored AI-assisted spending insights, categorization, and product flows for personal finance decisions.",
+      impact:
+        "Connects AI features to everyday usefulness instead of novelty.",
+    },
   },
   {
     title: "My Fashion Closet",
@@ -106,6 +141,13 @@ const projects = [
       "Responsive full-stack wardrobe app for adding clothing items, building outfits, saving looks, and viewing them in a clean modal interface.",
     tags: ["React", "Node.js", "Express", "PostgreSQL", "CSS"],
     url: "https://github.com/nivethajay27/my-fashion-closet",
+    caseStudy: {
+      problem: "Wardrobe planning is easier when items, outfits, and saved looks live in one visual workflow.",
+      built:
+        "Built clothing-item management, outfit creation, saved looks, responsive views, and modal-based browsing.",
+      impact:
+        "Shows full-stack CRUD, visual UX, and consumer-product instincts in a familiar domain.",
+    },
   },
 ];
 
@@ -203,15 +245,46 @@ function renderExperience() {
 
 function renderProjects() {
   const container = document.querySelector("#projectList");
+  const projectCount = projects.length;
+
   container.innerHTML = projects
     .map((project, index) => {
       const tags = project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("");
+      const caseStudyId = `project-case-study-${index}`;
       return `
-        <article class="project-card">
-          <div class="project-icon">0${index + 1}</div>
+        <article class="project-card" style="--stack-index: ${index + 1}; --stack-total: ${projectCount};">
+          <div class="project-card-top">
+            <div class="project-icon">0${index + 1}</div>
+            <span class="project-count">Featured / ${projectCount}</span>
+          </div>
           <h3>${project.title}</h3>
           <p>${project.description}</p>
           <div class="tag-list">${tags}</div>
+          <button
+            class="case-study-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="${caseStudyId}"
+          >
+            Case Study
+            <span aria-hidden="true">+</span>
+          </button>
+          <div class="case-study-panel" id="${caseStudyId}" hidden>
+            <dl>
+              <div>
+                <dt>Problem</dt>
+                <dd>${project.caseStudy.problem}</dd>
+              </div>
+              <div>
+                <dt>Built</dt>
+                <dd>${project.caseStudy.built}</dd>
+              </div>
+              <div>
+                <dt>Impact</dt>
+                <dd>${project.caseStudy.impact}</dd>
+              </div>
+            </dl>
+          </div>
           <a class="project-link" href="${project.url}" aria-label="View ${project.title} on GitHub">View GitHub</a>
         </article>
       `;
@@ -281,10 +354,134 @@ function resetProjectTilt(event) {
   event.currentTarget.style.setProperty("--tilt-y", "0deg");
 }
 
+function setMagnetMovement(event) {
+  const magnet = event.currentTarget;
+  const bounds = magnet.getBoundingClientRect();
+  const relativeX = (event.clientX - bounds.left) / bounds.width - 0.5;
+  const relativeY = (event.clientY - bounds.top) / bounds.height - 0.5;
+  const moveX = relativeX * 32;
+  const moveY = relativeY * 32;
+  const rotateX = relativeY * -10;
+  const rotateY = relativeX * 10;
+
+  magnet.classList.add("is-magnetic");
+  magnet.style.setProperty("--magnet-x", `${moveX.toFixed(2)}px`);
+  magnet.style.setProperty("--magnet-y", `${moveY.toFixed(2)}px`);
+  magnet.style.setProperty("--magnet-rotate-x", `${rotateX.toFixed(2)}deg`);
+  magnet.style.setProperty("--magnet-rotate-y", `${rotateY.toFixed(2)}deg`);
+}
+
+function resetMagnetMovement(event) {
+  const magnet = event.currentTarget;
+
+  magnet.classList.remove("is-magnetic");
+  magnet.style.setProperty("--magnet-x", "0px");
+  magnet.style.setProperty("--magnet-y", "0px");
+  magnet.style.setProperty("--magnet-rotate-x", "0deg");
+  magnet.style.setProperty("--magnet-rotate-y", "0deg");
+}
+
+function bindMagnetImages() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  document.querySelectorAll("[data-magnet]").forEach((magnet) => {
+    magnet.addEventListener("pointermove", setMagnetMovement);
+    magnet.addEventListener("pointerleave", resetMagnetMovement);
+    magnet.addEventListener("pointercancel", resetMagnetMovement);
+  });
+}
+
 function bindProjectInteractions() {
   document.querySelectorAll(".project-card").forEach((card) => {
     card.addEventListener("pointermove", setProjectTilt);
     card.addEventListener("pointerleave", resetProjectTilt);
+  });
+}
+
+function updateStackedProjects() {
+  const cards = document.querySelectorAll(".project-card");
+
+  cards.forEach((card) => {
+    const stickyTop = parseFloat(getComputedStyle(card).top) || 96;
+    const start = card.offsetTop - stickyTop;
+    const travel = window.innerHeight * 0.4;
+    const progress = Math.min(Math.max((window.scrollY - start) / travel, 0), 1);
+    const scale = 1 - progress * 0.075;
+    const opacity = 1 - progress * 0.16;
+
+    card.style.setProperty("--stack-scale", scale.toFixed(3));
+    card.style.setProperty("--stack-opacity", opacity.toFixed(3));
+  });
+}
+
+function bindStackedProjects() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  let isTicking = false;
+
+  function requestStackUpdate() {
+    if (isTicking) {
+      return;
+    }
+
+    isTicking = true;
+    window.requestAnimationFrame(() => {
+      updateStackedProjects();
+      isTicking = false;
+    });
+  }
+
+  updateStackedProjects();
+  window.addEventListener("scroll", requestStackUpdate, { passive: true });
+  window.addEventListener("resize", requestStackUpdate);
+}
+
+function bindCaseStudyToggles() {
+  document.querySelectorAll(".case-study-toggle").forEach((button) => {
+    button.addEventListener("click", () => {
+      const panel = document.querySelector(`#${button.getAttribute("aria-controls")}`);
+      const isOpen = button.getAttribute("aria-expanded") === "true";
+
+      button.setAttribute("aria-expanded", String(!isOpen));
+      button.querySelector("span").textContent = isOpen ? "+" : "-";
+      panel.hidden = isOpen;
+      panel.classList.toggle("is-open", !isOpen);
+    });
+  });
+}
+
+function revealOnScroll() {
+  const revealItems = document.querySelectorAll(
+    ".section-band, .timeline-item, .project-card, .skill-card, .impact-grid div, .education-list article",
+  );
+
+  if (!("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -12% 0px", threshold: 0.12 },
+  );
+
+  revealItems.forEach((item, index) => {
+    item.classList.add("reveal-item");
+    item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
+    observer.observe(item);
   });
 }
 
@@ -295,7 +492,11 @@ setTheme(savedTheme || systemTheme);
 renderExperience();
 renderProjects();
 renderSkills();
+bindMagnetImages();
 bindProjectInteractions();
+bindCaseStudyToggles();
+revealOnScroll();
+bindStackedProjects();
 setInterval(rotateRole, 2200);
 
 themeToggle.addEventListener("click", () => {

@@ -301,6 +301,80 @@ h3 {
   transform: translateY(-2px);
 }
 
+.case-study-toggle,
+.project-link {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--accent-strong);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.case-study-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  width: 100%;
+  margin-top: 1.1rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.case-study-toggle span {
+  display: grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface-strong) 84%, transparent);
+  color: var(--coral);
+  font: 900 1rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.case-study-toggle:hover {
+  color: var(--coral);
+}
+
+.case-study-panel {
+  display: grid;
+  overflow: hidden;
+  animation: case-study-open 260ms ease both;
+}
+
+.case-study-panel[hidden] {
+  display: none;
+}
+
+.case-study-panel dl {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+}
+
+.case-study-panel div {
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface-strong) 68%, transparent);
+}
+
+.case-study-panel dt {
+  color: var(--coral);
+  font: 800 0.72rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  text-transform: uppercase;
+}
+
+.case-study-panel dd {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+}
+
 .button.primary {
   border-color: transparent;
   background: var(--accent);
@@ -364,10 +438,56 @@ h3 {
 }
 
 .avatar-frame {
+  position: relative;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 2 / 3;
   border-radius: 8px;
   background: var(--surface-strong);
+}
+
+.magnet-frame {
+  cursor: grab;
+  transform:
+    translate3d(var(--magnet-x, 0), var(--magnet-y, 0), 0)
+    rotateX(var(--magnet-rotate-x, 0deg))
+    rotateY(var(--magnet-rotate-y, 0deg));
+  transform-style: preserve-3d;
+  transition:
+    transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 260ms ease;
+  will-change: transform;
+  animation: magnet-float 5.5s ease-in-out infinite;
+}
+
+.magnet-frame::before {
+  content: "";
+  position: absolute;
+  inset: -35%;
+  z-index: 1;
+  background:
+    linear-gradient(
+      110deg,
+      transparent 35%,
+      color-mix(in srgb, var(--surface-strong) 45%, transparent) 48%,
+      transparent 62%
+    );
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-28%) rotate(10deg);
+  transition:
+    opacity 220ms ease,
+    transform 420ms ease;
+}
+
+.magnet-frame:hover,
+.magnet-frame.is-magnetic {
+  box-shadow: 0 28px 70px color-mix(in srgb, var(--accent) 24%, transparent);
+}
+
+.magnet-frame:hover::before,
+.magnet-frame.is-magnetic::before {
+  opacity: 0.7;
+  transform: translateX(22%) rotate(10deg);
 }
 
 .avatar-frame img {
@@ -375,6 +495,16 @@ h3 {
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.magnet-image {
+  transform: translateZ(2.5rem) scale(1.025);
+  transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+.magnet-frame.is-magnetic .magnet-image {
+  transform: translateZ(3.2rem) scale(1.06);
 }
 
 .profile-card h2 {
@@ -413,8 +543,12 @@ h3 {
 }
 
 .timeline,
-.project-grid,
 .skills-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.project-grid {
   display: grid;
   gap: 1rem;
 }
@@ -471,10 +605,6 @@ h3 {
   color: var(--muted);
 }
 
-.project-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .project-card,
 .skill-card {
   padding: 1.1rem;
@@ -483,12 +613,23 @@ h3 {
 .project-card {
   display: flex;
   flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  top: 6rem;
+  position: sticky;
+  z-index: var(--stack-index);
+  min-height: 0;
+  max-height: calc(100vh - 7rem);
+  overflow: auto;
+  transform:
+    perspective(900px)
+    rotateX(var(--tilt-x, 0deg))
+    rotateY(var(--tilt-y, 0deg))
+    scale(var(--stack-scale, 1));
+  transform-origin: top center;
   transform-style: preserve-3d;
+  opacity: var(--stack-opacity, 1);
   transition:
     transform 180ms ease,
+    opacity 180ms ease,
     border-color 180ms ease,
     box-shadow 180ms ease,
     background 180ms ease;
@@ -521,16 +662,29 @@ h3 {
   opacity: 1;
 }
 
+.project-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
 .project-icon {
   display: grid;
   place-items: center;
   width: 2.5rem;
   height: 2.5rem;
-  margin-bottom: 1.25rem;
   border-radius: 8px;
   background: var(--accent);
   color: var(--surface);
   font: 800 1rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.project-count {
+  color: var(--coral);
+  font: 800 0.72rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  text-transform: uppercase;
 }
 
 .tag-list {
@@ -554,8 +708,10 @@ h3 {
   width: fit-content;
   margin-top: auto;
   padding-top: 1rem;
-  color: var(--accent-strong);
-  font-weight: 800;
+}
+
+.project-link:hover {
+  color: var(--coral);
 }
 
 .skills-grid {
@@ -631,9 +787,46 @@ h3 {
   font-weight: 700;
 }
 
+.reveal-item {
+  opacity: 0;
+  translate: 0 1.4rem;
+  transition:
+    opacity 560ms ease,
+    translate 560ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
 @keyframes slow-spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes case-study-open {
+  from {
+    opacity: 0;
+    transform: translateY(-0.35rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes magnet-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -0.65rem;
   }
 }
 
@@ -693,7 +886,11 @@ h3 {
     min-height: 28rem;
   }
 
-  .project-grid,
+  .project-card {
+    top: 8rem;
+    max-height: calc(100vh - 10rem);
+  }
+
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -725,7 +922,13 @@ h3 {
     min-height: 23rem;
   }
 
-  .project-grid,
+  .project-card {
+    top: 1rem;
+    position: relative;
+    min-height: auto;
+    max-height: none;
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
@@ -743,5 +946,19 @@ h3 {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .reveal-item {
+    opacity: 1;
+    translate: none;
+  }
+
+  .magnet-frame {
+    animation: none;
+    transform: none !important;
+  }
+
+  .magnet-image {
+    transform: none !important;
   }
 }
