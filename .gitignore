@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Editor settings
+.vscode/
+.idea/
+
+# Dependency folders, in case this site is later migrated to a build tool
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Local environment files
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

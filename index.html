@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Nivetha Jayakumar is a software engineer building full-stack, AI-powered, and data-driven products."
+    />
+    <title>Nivetha Jayakumar | Software Engineer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Go to home">
+        <span class="brand-mark">NJ</span>
+        <span>Nivetha Jayakumar</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle theme">
+        <span class="theme-icon" aria-hidden="true">☾</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero section-band" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">Software Engineer - San Francisco Bay Area, CA</p>
+          <h1>
+            Hi, I’m <span>Nivetha</span>, a
+            <strong id="roleText">full-stack engineer</strong>.
+          </h1>
+          <p class="hero-summary">
+            I build scalable web and mobile products across React, TypeScript,
+            Python, FastAPI, Firebase, and cloud infrastructure, with a strong
+            focus on AI-enabled workflows and product impact.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button secondary" href="./public/NivethaJayakumar_Resume.pdf">Resume</a>
+            <a class="button secondary" href="https://github.com/nivethajay27">GitHub</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Portfolio preview panel">
+          <div class="profile-orbit" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="profile-card">
+            <div class="avatar-frame">
+              <img src="./assets/nivetha-profile.png" alt="Nivetha Jayakumar" />
+            </div>
+            <div>
+              <p class="profile-label">Current focus</p>
+              <h2>AI Software Engineer</h2>
+              <p>
+                Founding engineer experience across product strategy, realtime apps,
+                APIs, analytics, and LLM-powered features.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band split-section" id="about">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Full-stack engineer with product instincts and AI systems experience.</h2>
+        </div>
+        <div class="section-copy">
+          <p>
+            I am a software engineer with experience building production web
+            products, realtime mobile applications, automation dashboards, ML-backed
+            analytics modules, and AI-powered user workflows.
+          </p>
+          <p>
+            My background spans founding-stage product ownership at Work Order
+            Wizard, engineering at Cisco, and graduate work in computer science at
+            Columbia University.
+          </p>
+          <div class="impact-grid">
+            <div><strong>35%</strong><span>API latency reduction</span></div>
+            <div><strong>2000+</strong><span>Cisco engineers supported</span></div>
+            <div><strong>45%</strong><span>usability lift from analytics</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band" id="experience">
+        <div class="section-heading">
+          <p class="eyebrow">Experience</p>
+          <h2>Work history</h2>
+        </div>
+        <div class="timeline" id="experienceList"></div>
+      </section>
+
+      <section class="section-band" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2>Featured projects</h2>
+        </div>
+        <div class="project-grid" id="projectList"></div>
+      </section>
+
+      <section class="section-band skills-section" id="skills">
+        <div class="section-heading">
+          <p class="eyebrow">Skills</p>
+          <h2>Tools and strengths</h2>
+        </div>
+        <div class="skills-grid" id="skillList"></div>
+      </section>
+
+      <section class="section-band split-section" id="education">
+        <div>
+          <p class="eyebrow">Education</p>
+          <h2>Computer science foundation with systems, AI, and interaction depth.</h2>
+        </div>
+        <div class="education-list">
+          <article>
+            <h3>Columbia University</h3>
+            <p>MS in Computer Science - Computer Vision, Graphics, Interaction & Robotics</p>
+            <span>New York, NY - May 2022</span>
+          </article>
+          <article>
+            <h3>SRM Institute of Science & Technology</h3>
+            <p>B Tech in Computer Science Engineering</p>
+            <span>Chennai, India - May 2020</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-band contact-section" id="contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s build useful software.</h2>
+          <p>
+            I am interested in software engineering roles across full-stack product
+            development, AI-enabled applications, and scalable web systems.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:nivethajayk@gmail.com">Email</a>
+          <a class="button secondary" href="https://github.com/nivethajay27">GitHub</a>
+          <a class="button secondary" href="https://linkedin.com/in/nivetha-jay">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> Nivetha Jayakumar</span>
+      <a href="./public/NivethaJayakumar_Resume.pdf">Resume</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
