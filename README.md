@@ -46,9 +46,7 @@ Then visit:
 http://localhost:4173
 ```
 
-## Deployment
 
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for GitHub Pages and Netlify instructions.
 
 ## Edit points
 
