@@ -1,13 +1,13 @@
 const roles = [
-  "full-stack engineer",
-  "AI product builder",
-  "backend systems developer",
-  "frontend engineer",
+  "Full-Stack Software Engineer.",
+  "AI Product Builder.",
+  "Backend Systems Developer.",
+  "Frontend Engineer.",
 ];
 
 const experience = [
   {
-    period: "Nov 2024 - Dec 2025",
+    period: "Dec 2024 - Dec 2025",
     title: "Founding Software Engineer / Business Product Manager",
     company: "Work Order Wizard - San Francisco Bay Area, CA",
     description:
@@ -68,85 +68,189 @@ const projects = [
   {
     title: "Adaptive AI Portfolio",
     description:
-      "AI-powered portfolio platform that tailors summaries and project framing for recruiters, saves shareable sessions, and supports PDF export.",
+      "AI-powered personal portfolio that tailors itself per recruiter using React, FastAPI, and Groq, with share links, session history, and PDF export.",
     tags: ["React", "TypeScript", "FastAPI", "Groq", "SQLite"],
     url: "https://github.com/nivethajay27/adaptive-ai-portfolio",
     caseStudy: {
       problem: "Recruiters and hiring teams often need different slices of the same portfolio story.",
       built:
-        "Built adaptive summaries, shareable sessions, PDF export, and backend flows for AI-assisted portfolio framing.",
+        "Built a React and FastAPI app that rewrites portfolio summaries and project framing for a specific recruiter, company, role, and job description.",
       impact:
-        "Shows how product thinking, full-stack execution, and AI workflows can turn a static resume into a tailored experience.",
+        "Shows full-stack AI product thinking with saved sessions, share links, local fallback generation, and browser-based PDF export.",
+    },
+    objectType: "laptop",
+    details: {
+      frontend: "React, TypeScript, Vite",
+      backend: "FastAPI, Python",
+      database: "SQLite",
+      apis: "Groq API with deterministic local fallback",
+      solution:
+        "The frontend collects recruiter inputs, sends them to a FastAPI tailoring endpoint, renders a live tailored preview, and saves generated versions with session and share IDs.",
+      features: [
+        "Recruiter-specific portfolio tailoring",
+        "Live tailored preview",
+        "Session history",
+        "Share links",
+        "Browser print PDF export",
+      ],
+      demo: "https://adaptive-ai-portfolio.vercel.app",
     },
   },
   {
-    title: "ShopSphere E-commerce Platform",
+    title: "Personal Health Platform",
     description:
-      "Full-featured commerce starter with product catalog, JWT auth, saved carts, checkout, admin CRUD, PostgreSQL, and Stripe payment intent support.",
-    tags: ["Next.js", "Express", "PostgreSQL", "Stripe", "JWT"],
-    url: "https://github.com/nivethajay27/shopsphere-ecommerce-platform",
+      "Modern cycle and wellness tracking application that delivers personalized health insights through nutrition, recovery, and symptom tracking.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Recharts", "IndexedDB"],
+    url: "https://github.com/nivethajay27/personal-health-platform",
     caseStudy: {
-      problem: "Commerce apps need smooth customer flows and reliable admin operations behind the scenes.",
+      problem: "Wellness tracking needs to make patterns clear while keeping sensitive health-adjacent data private and local-first.",
       built:
-        "Created product browsing, authentication, cart persistence, checkout, admin CRUD, and Stripe payment intent support.",
+        "Built a dashboard-first Next.js app for cycle phase visualization, daily check-ins, food/workout/recovery logging, and pattern exploration.",
       impact:
-        "Demonstrates end-to-end product architecture across frontend, backend, database, and payments.",
+        "Shows responsible product design for wellness data, local-first storage, charting, privacy controls, and polished dashboard UX.",
     },
-  },
-  {
-    title: "FullStack AI Chatbot",
-    description:
-      "Authenticated chatbot app with persistent sessions, token tracking, streaming assistant responses, theme support, and PDF/image attachments.",
-    tags: ["React", "Vite", "Express", "PostgreSQL", "JWT"],
-    url: "https://github.com/nivethajay27/Fullstack_AIChatbot",
-    caseStudy: {
-      problem: "AI chat products need persistence, attachment handling, and clear user feedback to feel production-ready.",
-      built:
-        "Implemented auth, streaming responses, session history, token tracking, themes, and document/image attachment support.",
-      impact:
-        "Highlights practical LLM app engineering beyond a simple prompt box.",
+    objectType: "cloud",
+    details: {
+      frontend: "Next.js, TypeScript, Tailwind CSS, Recharts",
+      backend: "TODO: Confirm backend details if implemented.",
+      database: "IndexedDB local-first storage",
+      apis: "TODO: Confirm API details if implemented.",
+      solution:
+        "Implemented local-first wellness tracking with dashboard metrics, chart filters, rule-based insights, export/delete controls, and privacy/settings flows.",
+      features: [
+        "Cycle phase visualization",
+        "Daily check-in logging",
+        "Food, workout, and recovery logging",
+        "Rule-based insights",
+        "Interactive chart filters",
+        "Export/delete local data controls",
+      ],
+      demo: "TODO: Add live demo link if available.",
     },
   },
   {
     title: "Personalized Pixel Avatar",
     description:
-      "TypeScript project focused on generating personalized pixel avatar experiences and interactive profile visuals.",
-    tags: ["TypeScript", "UI", "Creative Tools"],
+      "Full-stack monorepo for generating customizable pixel avatars with a React editor, Express API, and shared avatar engine.",
+    tags: ["React", "TypeScript", "Vite", "Express", "Node.js"],
     url: "https://github.com/nivethajay27/personalized-pixel-avatar",
     caseStudy: {
-      problem: "Personal profile visuals can feel generic when they do not respond to the user.",
+      problem: "Avatar generation needs consistent rendering rules across the UI and API.",
       built:
-        "Designed a TypeScript-based creative interface for generating personalized pixel avatar experiences.",
+        "Built a monorepo with an avatar editor UI, randomization/rendering API, shared TypeScript contracts, and a reusable layer-based avatar engine.",
       impact:
-        "Adds a playful UI systems project that shows range beyond conventional dashboards.",
+        "Shows creative full-stack TypeScript architecture with deterministic rendering, export, and reusable packages.",
+    },
+    objectType: "phone",
+    details: {
+      frontend: "React, TypeScript, Vite",
+      backend: "Node.js, TypeScript, Express",
+      database: "TODO: Confirm database usage if implemented.",
+      apis: "Express API endpoints for random avatar generation and PNG rendering",
+      solution:
+        "Created a layered editor with configurable avatar parts, deterministic seed randomization, undo history, favorites, and PNG export.",
+      features: [
+        "Layered avatar editor",
+        "Background patterns and gradient controls",
+        "Palette controls",
+        "Deterministic randomization by seed",
+        "Undo history",
+        "Favorites tray",
+        "PNG export",
+      ],
+      demo: "https://personalized-pixel-avatar-8x0nk06wx-nivethajay27s-projects.vercel.app",
     },
   },
   {
-    title: "AI-Powered Expense Tracker",
+    title: "FullStack AI Chatbot",
     description:
-      "Expense tracking application concept centered on AI-assisted insights and practical personal finance workflows.",
-    tags: ["JavaScript", "AI", "Product"],
-    url: "https://github.com/nivethajay27/ai-powered-expense-tracker",
+      "Modern full-stack chatbot with streaming AI responses, PostgreSQL storage, JWT authentication, and conversation management.",
+    tags: ["React", "Vite", "Express", "PostgreSQL", "JWT"],
+    url: "https://github.com/nivethajay27/Fullstack_AIChatbot",
     caseStudy: {
-      problem: "Expense tools collect data, but users still need help understanding what to do with it.",
+      problem: "AI chat products need persistence, authentication, usage visibility, and attachment handling to feel production-ready.",
       built:
-        "Explored AI-assisted spending insights, categorization, and product flows for personal finance decisions.",
+        "Implemented a full-stack chatbot with user auth, protected chat endpoints, DB-backed sessions, streaming responses, and PDF/image attachments.",
       impact:
-        "Connects AI features to everyday usefulness instead of novelty.",
+        "Highlights practical LLM app engineering beyond a simple prompt box.",
+    },
+    objectType: "terminal",
+    details: {
+      frontend: "React, Vite",
+      backend: "Express, Node.js",
+      database: "PostgreSQL",
+      apis: "Streaming chat endpoint, PDF/image attachment-aware prompts",
+      solution:
+        "Built registration/login, multi-chat session UI, token usage display, streaming assistant responses, conversation controls, and attachment-aware prompts.",
+      features: [
+        "User registration and login",
+        "Protected chat endpoint",
+        "Persistent sessions and messages",
+        "Token usage tracking",
+        "Streaming assistant responses",
+        "Conversation rename/archive/delete",
+        "PDF/image attachments",
+      ],
+      demo: "TODO: Add live demo link if available.",
     },
   },
   {
     title: "My Fashion Closet",
     description:
-      "Responsive full-stack wardrobe app for adding clothing items, building outfits, saving looks, and viewing them in a clean modal interface.",
-    tags: ["React", "Node.js", "Express", "PostgreSQL", "CSS"],
+      "Full-stack virtual wardrobe app with an intelligent outfit stylist, simulated try-on preview, daily recommendations, trip packing, wishlist gap analysis, and inspiration-based outfit recreation.",
+    tags: ["React", "React Router", "Node.js", "Express", "PostgreSQL"],
     url: "https://github.com/nivethajay27/my-fashion-closet",
     caseStudy: {
-      problem: "Wardrobe planning is easier when items, outfits, and saved looks live in one visual workflow.",
+      problem: "Wardrobe planning is easier when closet data, style preferences, outfit planning, and inspiration workflows live in one product.",
       built:
-        "Built clothing-item management, outfit creation, saved looks, responsive views, and modal-based browsing.",
+        "Built a full-stack fashion closet with wardrobe metadata, outfit generation, try-on preview, trip packing, wishlist analysis, and inspiration-based outfit recreation.",
       impact:
-        "Shows full-stack CRUD, visual UX, and consumer-product instincts in a familiar domain.",
+        "Shows consumer-product thinking through visual UX, full-stack data flows, recommendation logic, and multi-page planning features.",
+    },
+    objectType: "database",
+    details: {
+      frontend: "React, React Router, CSS",
+      backend: "Express, Node.js",
+      database: "PostgreSQL",
+      apis: "Express API routes",
+      solution:
+        "Created closet filtering, style-goal onboarding, outfit scoring, simulated try-on, 7-day planning, trip packing, wishlist gap analysis, and inspiration recreation flows.",
+      features: [
+        "Virtual closet metadata",
+        "Clothing image upload",
+        "Daily stylist recommendations",
+        "Simulated try-on preview",
+        "Outfit planner",
+        "Trip packing planner",
+        "Wishlist gap analysis",
+        "Inspiration-based outfit recreation",
+      ],
+      demo: "TODO: Add live demo link if available.",
+    },
+  },
+  {
+    title: "Recipe Organizer",
+    description:
+      "Full-stack recipe app for saving, tagging, searching, favoriting, and viewing favorite dishes with image uploads and modal recipe details.",
+    tags: ["React", "Axios", "Node.js", "Express", "PostgreSQL"],
+    url: "https://github.com/nivethajay27/recipe-organizer",
+    caseStudy: {
+      problem: "Home cooks need a simple way to save, tag, search, and revisit favorite recipes.",
+      built:
+        "Built a full-stack recipe organizer with recipe creation, image uploads, ingredients/instructions, tags, favorites, search, and modal details.",
+      impact:
+        "Demonstrates practical CRUD, file upload handling, search/filter UX, and PostgreSQL-backed organization.",
+    },
+    objectType: "folder",
+    details: {
+      frontend: "React, Axios, custom CSS",
+      backend: "Node.js, Express",
+      database: "PostgreSQL",
+      apis: "Express API routes, Multer file uploads",
+      solution:
+        "Created a React and Express app for adding recipes, storing them in PostgreSQL, uploading images, filtering by tags, searching recipes, and opening recipe modal views.",
+      features: ["Add recipes", "Image uploads", "Tags", "Favorites", "Search", "Recipe modal popup"],
+      demo: "TODO: Add live demo link if available.",
     },
   },
 ];
@@ -183,16 +287,54 @@ const roleText = document.querySelector("#roleText");
 const themeToggle = document.querySelector("#themeToggle");
 const themeIcon = document.querySelector(".theme-icon");
 const cursorGlow = document.querySelector(".cursor-glow");
+const mailboxButton = document.querySelector("#mailboxButton");
 
 let roleIndex = 0;
 let sparkleIndex = 0;
+let activeExperienceIndex = 0;
+let activeVersionIndex = 0;
+let lastExperienceTrigger = null;
 
-const cursorSparkles = Array.from({ length: 10 }, () => {
-  const sparkle = document.createElement("span");
-  sparkle.className = "cursor-sparkle";
-  document.body.appendChild(sparkle);
-  return sparkle;
-});
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const cursorSparkles = prefersReducedMotion.matches
+  ? []
+  : Array.from({ length: 10 }, () => {
+      const sparkle = document.createElement("span");
+      sparkle.className = "cursor-sparkle";
+      document.body.appendChild(sparkle);
+      return sparkle;
+    });
+
+const experienceTechnologyTerms = [
+  "React",
+  "TypeScript",
+  "React Native",
+  "FastAPI",
+  "Firebase",
+  "GCP",
+  "LLM",
+  "Flask",
+  "MongoDB",
+  "Java",
+  "Jenkins",
+  "Docker",
+  "Kubernetes",
+  "MeteorJS",
+  "NLTK",
+  "Scikit-learn",
+  "NLP",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Bootstrap",
+  "jQuery",
+  "PHP",
+  "MySQL",
+  "Razorpay",
+  "Paytm",
+  "Visual Basic .NET",
+  "Android",
+];
 
 function getExperienceIcon(title) {
   const normalizedTitle = title.toLowerCase();
@@ -216,74 +358,449 @@ function getExperienceIcon(title) {
   return "DEV";
 }
 
+function parseCompanyLocation(companyLine) {
+  const [company, ...locationParts] = companyLine.split(" - ");
+
+  return {
+    company,
+    location: locationParts.join(" - ") || "Location available in resume",
+  };
+}
+
+function getExperienceTechnologies(description) {
+  return experienceTechnologyTerms.filter((term) =>
+    description.toLowerCase().includes(term.toLowerCase()),
+  );
+}
+
+function getExperienceBullets(description) {
+  return description
+    .split(/,\s+(?=(with|including|implementing|reducing|applying|contributing|technical|and internal)\b)/i)
+    .map((part) => part.replace(/^(with|including|implementing|and internal)\s+/i, "").trim())
+    .filter(Boolean)
+    .slice(0, 4);
+}
+
+function getExperienceTheme(item) {
+  const company = item.company.toLowerCase();
+  const title = item.title.toLowerCase();
+
+  if (company.includes("work order wizard")) return "workorder";
+  if (company.startsWith("cisco")) return "network";
+  if (company.includes("seasons")) return "commerce";
+  if (title.includes("android")) return "mobile";
+  if (title.includes("ai") || title.includes("neural") || company.includes("fresh digital")) {
+    return "analytics";
+  }
+
+  return "dashboard";
+}
+
+function renderExperienceScene(theme, label) {
+  const scenes = {
+    network: `
+      <div class="experience-rack" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="experience-terminal" aria-hidden="true">
+        <span>$ monitor --network</span>
+        <span>nodes connected</span>
+      </div>
+      <div class="experience-network" aria-hidden="true"></div>
+    `,
+    workorder: `
+      <div class="experience-phone" aria-hidden="true"><span>mobile app</span></div>
+      <div class="experience-dashboard" aria-hidden="true">
+        <span>dashboard</span>
+        <i></i><i></i>
+      </div>
+      <div class="experience-api" aria-hidden="true">API</div>
+      <div class="experience-card-stack" aria-hidden="true">
+        <span>property</span>
+        <span>work order</span>
+      </div>
+    `,
+    commerce: `
+      <div class="experience-storefront" aria-hidden="true"><span>catalog</span></div>
+      <div class="experience-cart" aria-hidden="true">cart</div>
+      <div class="experience-dashboard" aria-hidden="true">
+        <span>admin</span>
+        <i></i><i></i>
+      </div>
+    `,
+    mobile: `
+      <div class="experience-phone is-large" aria-hidden="true"><span>Android</span></div>
+      <div class="experience-terminal" aria-hidden="true">
+        <span>build mobile</span>
+        <span>implementation</span>
+      </div>
+    `,
+    analytics: `
+      <div class="experience-dashboard" aria-hidden="true">
+        <span>analytics</span>
+        <i></i><i></i>
+      </div>
+      <div class="experience-terminal" aria-hidden="true">
+        <span>classify text</span>
+        <span>model output</span>
+      </div>
+    `,
+    dashboard: `
+      <div class="experience-dashboard" aria-hidden="true">
+        <span>web app</span>
+        <i></i><i></i>
+      </div>
+      <div class="experience-terminal" aria-hidden="true">
+        <span>internal tools</span>
+        <span>frontend flow</span>
+      </div>
+    `,
+  };
+
+  return `
+    <div class="experience-scene experience-scene-${theme}" aria-label="${label} technical scene">
+      <div class="scene-doodle scene-star" aria-hidden="true">✦</div>
+      <div class="scene-doodle scene-arrow" aria-hidden="true">↗</div>
+      ${scenes[theme]}
+    </div>
+  `;
+}
+
 function setTheme(theme) {
   root.dataset.theme = theme;
-  localStorage.setItem("portfolio-theme", theme);
   themeIcon.textContent = theme === "dark" ? "☀" : "☾";
+}
+
+function renderExperienceDetails(index) {
+  const item = experience[index];
+  const { company, location } = parseCompanyLocation(item.company);
+  const technologies = getExperienceTechnologies(item.description);
+  const bullets = getExperienceBullets(item.description);
+  const theme = getExperienceTheme(item);
+  const detailPanel = document.querySelector("#experienceDetail");
+
+  detailPanel.innerHTML = `
+    <div class="experience-detail-heading">
+      <p class="eyebrow">Checkpoint ${String(index + 1).padStart(2, "0")}</p>
+      <h3 id="experienceDialogTitle">${company}</h3>
+      <p>${item.title}</p>
+    </div>
+    <dl class="experience-facts">
+      <div>
+        <dt>Dates</dt>
+        <dd>${item.period}</dd>
+      </div>
+      <div>
+        <dt>Location</dt>
+        <dd>${location}</dd>
+      </div>
+    </dl>
+    ${renderExperienceScene(theme, company)}
+    <div class="experience-detail-grid">
+      <div>
+        <h4>Resume details</h4>
+        <p>${item.description}</p>
+        <ul>${bullets.map((bullet) => `<li>${bullet}</li>`).join("")}</ul>
+      </div>
+      <div>
+        <h4>Technologies</h4>
+        <div class="experience-tech-list">
+          ${
+            technologies.length
+              ? technologies.map((tech) => `<span>${tech}</span>`).join("")
+              : "<span>TODO: Confirm technologies</span>"
+          }
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.querySelectorAll(".experience-card").forEach((card) => {
+    card.classList.toggle("is-active", Number(card.dataset.experienceIndex) === index);
+  });
+
+  document.querySelectorAll(".company-sign").forEach((button) => {
+    button.setAttribute("aria-expanded", String(Number(button.dataset.experienceIndex) === index));
+  });
+}
+
+function openExperienceDialog(index, trigger) {
+  const dialog = document.querySelector("#experienceDialog");
+  const dialogPanel = document.querySelector("#experienceDialogPanel");
+
+  activeExperienceIndex = index;
+  lastExperienceTrigger = trigger;
+  renderExperienceDetails(activeExperienceIndex);
+  dialog.hidden = false;
+  document.body.classList.add("modal-open");
+  requestAnimationFrame(() => {
+    dialog.classList.add("is-open");
+    dialogPanel?.focus({ preventScroll: true });
+  });
+}
+
+function closeExperienceDialog() {
+  const dialog = document.querySelector("#experienceDialog");
+
+  if (!dialog || dialog.hidden) {
+    return;
+  }
+
+  dialog.classList.remove("is-open");
+  dialog.hidden = true;
+  document.body.classList.remove("modal-open");
+  document.querySelectorAll(".company-sign").forEach((button) => {
+    button.setAttribute("aria-expanded", "false");
+  });
+  lastExperienceTrigger?.focus({ preventScroll: true });
 }
 
 function renderExperience() {
   const container = document.querySelector("#experienceList");
-  container.innerHTML = experience
-    .map(
-      (item) => `
-        <article class="timeline-item">
-          <div class="timeline-meta">
-            <span class="timeline-icon" aria-hidden="true">${getExperienceIcon(item.title)}</span>
-            <div class="timeline-period">${item.period}</div>
-          </div>
-          <div>
-            <h3>${item.title}</h3>
-            <p><strong>${item.company}</strong></p>
-            <p>${item.description}</p>
-          </div>
-        </article>
-      `,
-    )
-    .join("");
+  container.innerHTML = `
+    <div class="experience-journey" aria-label="Experience journey checkpoints">
+      <div class="checkpoint-track" aria-hidden="true"></div>
+      <div class="experience-checkpoints">
+        ${experience
+          .map((item, index) => {
+            const { company, location } = parseCompanyLocation(item.company);
+            const theme = getExperienceTheme(item);
+
+            return `
+              <article class="experience-card experience-card-${theme}" data-experience-index="${index}">
+                ${renderExperienceScene(theme, company)}
+                <button
+                  class="company-sign"
+                  type="button"
+                  data-experience-index="${index}"
+                  aria-controls="experienceDialog"
+                  aria-haspopup="dialog"
+                  aria-expanded="false"
+                >
+                  <span class="checkpoint-dot" aria-hidden="true">${getExperienceIcon(item.title)}</span>
+                  <span>${company}</span>
+                </button>
+                <div class="experience-card-copy">
+                  <h3>${item.title}</h3>
+                  <p>${item.period}</p>
+                  <p>${location}</p>
+                </div>
+              </article>
+            `;
+          })
+          .join("")}
+      </div>
+    </div>
+    <div
+      class="experience-dialog"
+      id="experienceDialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="experienceDialogTitle"
+      hidden
+    >
+      <div class="experience-dialog-backdrop" data-dialog-close></div>
+      <section class="experience-dialog-panel" id="experienceDialogPanel" tabindex="-1">
+        <button
+          class="experience-dialog-close"
+          type="button"
+          aria-label="Close experience details"
+          data-dialog-close
+        >×</button>
+        <aside
+          class="experience-detail"
+          id="experienceDetail"
+          aria-live="polite"
+          aria-label="Selected experience details"
+        ></aside>
+      </section>
+    </div>
+  `;
+
+  renderExperienceDetails(activeExperienceIndex);
 }
 
 function renderProjects() {
+  renderWorkstationObjects();
+  renderProjectPanel(0);
+  renderMobileProjectCards();
+}
+
+function renderWorkstationObjects() {
+  const container = document.querySelector("#projectObjectList");
+
+  container.innerHTML = `
+    <div class="workstation-doodle project-star">+</div>
+    <div class="workstation-doodle project-arrow">-&gt;</div>
+    <div class="workstation-note">click an object</div>
+    <div class="workstation-surface"></div>
+    ${projects
+      .map(
+        (project, index) => `
+          <button
+            class="project-object object-${project.objectType}"
+            type="button"
+            data-project-index="${index}"
+            aria-controls="projectPanel"
+            aria-expanded="${index === 0 ? "true" : "false"}"
+            aria-label="Open details for ${project.title}"
+          >
+            ${getProjectObjectMarkup(project.objectType)}
+            <span>${project.title}</span>
+          </button>
+        `,
+      )
+      .join("")}
+  `;
+}
+
+function getProjectObjectMarkup(type) {
+  const objectMarkup = {
+    laptop: `
+      <i class="object-screen"><b></b><b></b><b></b></i>
+      <i class="object-base"></i>
+    `,
+    folder: `
+      <i class="object-folder-tab"></i>
+      <i class="object-folder-body"></i>
+    `,
+    terminal: `
+      <i class="object-terminal-bar"></i>
+      <i class="object-terminal-line"></i>
+      <i class="object-terminal-line short"></i>
+    `,
+    phone: `
+      <i class="object-phone-screen"></i>
+      <i class="object-phone-button"></i>
+    `,
+    database: `
+      <i class="object-db-top"></i>
+      <i class="object-db-body"></i>
+      <i class="object-db-line"></i>
+    `,
+    cloud: `
+      <i class="object-cloud-one"></i>
+      <i class="object-cloud-two"></i>
+      <i class="object-cloud-three"></i>
+    `,
+  };
+
+  return `<span class="object-illustration" aria-hidden="true">${objectMarkup[type] || objectMarkup.folder}</span>`;
+}
+
+function renderProjectPanel(index, shouldFocus = false) {
+  const project = projects[index];
+  const panel = document.querySelector("#projectPanel");
+  const tags = project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("");
+  const features = project.details.features.map((feature) => `<li>${feature}</li>`).join("");
+
+  panel.innerHTML = `
+    <p class="panel-kicker">Selected project</p>
+    <h3>${project.title}</h3>
+    <p>${project.description}</p>
+    <div class="tag-list">${tags}</div>
+    <dl class="project-detail-grid">
+      <div>
+        <dt>Problem</dt>
+        <dd>${project.caseStudy.problem}</dd>
+      </div>
+      <div>
+        <dt>Solution</dt>
+        <dd>${project.details.solution}</dd>
+      </div>
+      <div>
+        <dt>Technologies</dt>
+        <dd>${project.tags.join(", ")}</dd>
+      </div>
+      <div>
+        <dt>Frontend</dt>
+        <dd>${project.details.frontend}</dd>
+      </div>
+      <div>
+        <dt>Backend</dt>
+        <dd>${project.details.backend}</dd>
+      </div>
+      <div>
+        <dt>Database</dt>
+        <dd>${project.details.database}</dd>
+      </div>
+      <div>
+        <dt>APIs</dt>
+        <dd>${project.details.apis}</dd>
+      </div>
+      <div>
+        <dt>Demo</dt>
+        <dd>${project.details.demo}</dd>
+      </div>
+    </dl>
+    <div class="project-features">
+      <h4>Key features</h4>
+      <ul>${features}</ul>
+    </div>
+    <a class="button primary project-panel-link" href="${project.url}">GitHub</a>
+  `;
+
+  document.querySelectorAll(".project-object").forEach((button) => {
+    const isSelected = Number(button.dataset.projectIndex) === index;
+    button.classList.toggle("is-selected", isSelected);
+    button.setAttribute("aria-expanded", String(isSelected));
+  });
+
+  if (shouldFocus) {
+    panel.focus({ preventScroll: true });
+  }
+}
+
+function renderMobileProjectCards() {
   const container = document.querySelector("#projectList");
-  const projectCount = projects.length;
 
   container.innerHTML = projects
-    .map((project, index) => {
+    .map((project) => {
       const tags = project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("");
-      const caseStudyId = `project-case-study-${index}`;
+      const features = project.details.features.map((feature) => `<li>${feature}</li>`).join("");
+
       return `
-        <article class="project-card" style="--stack-index: ${index + 1}; --stack-total: ${projectCount};">
-          <div class="project-card-top">
-            <div class="project-icon">0${index + 1}</div>
-            <span class="project-count">Featured / ${projectCount}</span>
-          </div>
+        <article class="project-card">
           <h3>${project.title}</h3>
           <p>${project.description}</p>
           <div class="tag-list">${tags}</div>
-          <button
-            class="case-study-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="${caseStudyId}"
-          >
-            Case Study
-            <span aria-hidden="true">+</span>
-          </button>
-          <div class="case-study-panel" id="${caseStudyId}" hidden>
-            <dl>
-              <div>
-                <dt>Problem</dt>
-                <dd>${project.caseStudy.problem}</dd>
-              </div>
-              <div>
-                <dt>Built</dt>
-                <dd>${project.caseStudy.built}</dd>
-              </div>
-              <div>
-                <dt>Impact</dt>
-                <dd>${project.caseStudy.impact}</dd>
-              </div>
-            </dl>
+          <dl class="mobile-project-details">
+            <div>
+              <dt>Problem</dt>
+              <dd>${project.caseStudy.problem}</dd>
+            </div>
+            <div>
+              <dt>Solution</dt>
+              <dd>${project.details.solution}</dd>
+            </div>
+            <div>
+              <dt>Technologies</dt>
+              <dd>${project.tags.join(", ")}</dd>
+            </div>
+            <div>
+              <dt>Frontend</dt>
+              <dd>${project.details.frontend}</dd>
+            </div>
+            <div>
+              <dt>Backend</dt>
+              <dd>${project.details.backend}</dd>
+            </div>
+            <div>
+              <dt>Database</dt>
+              <dd>${project.details.database}</dd>
+            </div>
+            <div>
+              <dt>APIs</dt>
+              <dd>${project.details.apis}</dd>
+            </div>
+            <div>
+              <dt>Demo</dt>
+              <dd>${project.details.demo}</dd>
+            </div>
+          </dl>
+          <div class="project-features">
+            <h4>Key features</h4>
+            <ul>${features}</ul>
           </div>
           <a class="project-link" href="${project.url}" aria-label="View ${project.title} on GitHub">View GitHub</a>
         </article>
@@ -304,6 +821,27 @@ function renderSkills() {
       `,
     )
     .join("");
+}
+
+function setActiveVersion(index) {
+  const cards = document.querySelectorAll(".version-card");
+  const dots = document.querySelectorAll("[data-version-dot]");
+
+  if (cards.length === 0) {
+    return;
+  }
+
+  activeVersionIndex = (index + cards.length) % cards.length;
+
+  cards.forEach((card, cardIndex) => {
+    const isActive = cardIndex === activeVersionIndex;
+    card.classList.toggle("is-active", isActive);
+    card.setAttribute("aria-hidden", String(!isActive));
+  });
+
+  dots.forEach((dot, dotIndex) => {
+    dot.classList.toggle("is-active", dotIndex === activeVersionIndex);
+  });
 }
 
 function rotateRole() {
@@ -331,6 +869,10 @@ function trackCursor(event) {
   cursorGlow.style.left = `${event.clientX}px`;
   cursorGlow.style.top = `${event.clientY}px`;
 
+  if (cursorSparkles.length === 0) {
+    return;
+  }
+
   const sparkle = cursorSparkles[sparkleIndex];
   sparkleIndex = (sparkleIndex + 1) % cursorSparkles.length;
   sparkle.style.left = `${event.clientX}px`;
@@ -354,109 +896,68 @@ function resetProjectTilt(event) {
   event.currentTarget.style.setProperty("--tilt-y", "0deg");
 }
 
-function setMagnetMovement(event) {
-  const magnet = event.currentTarget;
-  const bounds = magnet.getBoundingClientRect();
-  const relativeX = (event.clientX - bounds.left) / bounds.width - 0.5;
-  const relativeY = (event.clientY - bounds.top) / bounds.height - 0.5;
-  const moveX = relativeX * 32;
-  const moveY = relativeY * 32;
-  const rotateX = relativeY * -10;
-  const rotateY = relativeX * 10;
-
-  magnet.classList.add("is-magnetic");
-  magnet.style.setProperty("--magnet-x", `${moveX.toFixed(2)}px`);
-  magnet.style.setProperty("--magnet-y", `${moveY.toFixed(2)}px`);
-  magnet.style.setProperty("--magnet-rotate-x", `${rotateX.toFixed(2)}deg`);
-  magnet.style.setProperty("--magnet-rotate-y", `${rotateY.toFixed(2)}deg`);
-}
-
-function resetMagnetMovement(event) {
-  const magnet = event.currentTarget;
-
-  magnet.classList.remove("is-magnetic");
-  magnet.style.setProperty("--magnet-x", "0px");
-  magnet.style.setProperty("--magnet-y", "0px");
-  magnet.style.setProperty("--magnet-rotate-x", "0deg");
-  magnet.style.setProperty("--magnet-rotate-y", "0deg");
-}
-
-function bindMagnetImages() {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    return;
-  }
-
-  document.querySelectorAll("[data-magnet]").forEach((magnet) => {
-    magnet.addEventListener("pointermove", setMagnetMovement);
-    magnet.addEventListener("pointerleave", resetMagnetMovement);
-    magnet.addEventListener("pointercancel", resetMagnetMovement);
-  });
-}
-
 function bindProjectInteractions() {
   document.querySelectorAll(".project-card").forEach((card) => {
     card.addEventListener("pointermove", setProjectTilt);
     card.addEventListener("pointerleave", resetProjectTilt);
   });
-}
 
-function updateStackedProjects() {
-  const cards = document.querySelectorAll(".project-card");
-
-  cards.forEach((card) => {
-    const stickyTop = parseFloat(getComputedStyle(card).top) || 96;
-    const start = card.offsetTop - stickyTop;
-    const travel = window.innerHeight * 0.4;
-    const progress = Math.min(Math.max((window.scrollY - start) / travel, 0), 1);
-    const scale = 1 - progress * 0.075;
-    const opacity = 1 - progress * 0.16;
-
-    card.style.setProperty("--stack-scale", scale.toFixed(3));
-    card.style.setProperty("--stack-opacity", opacity.toFixed(3));
+  document.querySelectorAll(".project-object").forEach((button) => {
+    button.addEventListener("click", () => {
+      renderProjectPanel(Number(button.dataset.projectIndex), true);
+    });
   });
 }
 
-function bindStackedProjects() {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+function bindVersionCarousel() {
+  document.querySelector("#versionPrev")?.addEventListener("click", () => {
+    setActiveVersion(activeVersionIndex - 1);
+  });
+
+  document.querySelector("#versionNext")?.addEventListener("click", () => {
+    setActiveVersion(activeVersionIndex + 1);
+  });
+
+  document.querySelectorAll("[data-version-dot]").forEach((dot) => {
+    dot.addEventListener("click", () => {
+      setActiveVersion(Number(dot.dataset.versionDot));
+    });
+  });
+}
+
+function bindExperienceInteractions() {
+  document.querySelectorAll(".company-sign").forEach((button) => {
+    button.addEventListener("click", () => {
+      openExperienceDialog(Number(button.dataset.experienceIndex), button);
+    });
+  });
+
+  document.querySelectorAll("[data-dialog-close]").forEach((control) => {
+    control.addEventListener("click", closeExperienceDialog);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeExperienceDialog();
+    }
+  });
+}
+
+function bindMailboxInteraction() {
+  if (!mailboxButton) {
     return;
   }
 
-  let isTicking = false;
-
-  function requestStackUpdate() {
-    if (isTicking) {
-      return;
-    }
-
-    isTicking = true;
-    window.requestAnimationFrame(() => {
-      updateStackedProjects();
-      isTicking = false;
-    });
-  }
-
-  updateStackedProjects();
-  window.addEventListener("scroll", requestStackUpdate, { passive: true });
-  window.addEventListener("resize", requestStackUpdate);
-}
-
-function bindCaseStudyToggles() {
-  document.querySelectorAll(".case-study-toggle").forEach((button) => {
-    button.addEventListener("click", () => {
-      const panel = document.querySelector(`#${button.getAttribute("aria-controls")}`);
-      const isOpen = button.getAttribute("aria-expanded") === "true";
-
-      button.setAttribute("aria-expanded", String(!isOpen));
-      button.querySelector("span").textContent = isOpen ? "+" : "-";
-      panel.hidden = isOpen;
-      panel.classList.toggle("is-open", !isOpen);
-    });
+  mailboxButton.addEventListener("click", () => {
+    const firstContactAction = document.querySelector("#contactActions a");
+    mailboxButton.classList.add("is-open");
+    firstContactAction?.focus({ preventScroll: false });
   });
 }
 
 function revealOnScroll() {
   const revealItems = document.querySelectorAll(
-    ".section-band, .timeline-item, .project-card, .skill-card, .impact-grid div, .education-list article",
+    ".section-band, .experience-card, .project-object, .project-panel, .project-card, .skill-card, .education-list article",
   );
 
   if (!("IntersectionObserver" in window)) {
@@ -485,18 +986,16 @@ function revealOnScroll() {
   });
 }
 
-const savedTheme = localStorage.getItem("portfolio-theme");
-const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-
-setTheme(savedTheme || systemTheme);
+setTheme("light");
 renderExperience();
 renderProjects();
 renderSkills();
-bindMagnetImages();
+setActiveVersion(0);
+bindVersionCarousel();
+bindExperienceInteractions();
 bindProjectInteractions();
-bindCaseStudyToggles();
+bindMailboxInteraction();
 revealOnScroll();
-bindStackedProjects();
 setInterval(rotateRole, 2200);
 
 themeToggle.addEventListener("click", () => {

@@ -8,6 +8,12 @@
       content="Nivetha Jayakumar is a software engineer building full-stack, AI-powered, and data-driven products."
     />
     <title>Nivetha Jayakumar | Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=Nunito+Sans:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -19,12 +25,14 @@
         <span>Nivetha Jayakumar</span>
       </a>
       <nav class="main-nav" aria-label="Main navigation">
-        <a href="#about">About</a>
+        <a href="#home">Home</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
+        <a href="#projects">Workstation</a>
+        <a href="#skills">Toolkit</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a class="nav-resume" href="./public/NivethaJayakumar_Resume.pdf">Resume</a>
       <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle theme">
         <span class="theme-icon" aria-hidden="true">☾</span>
       </button>
@@ -35,49 +43,93 @@
         <div class="hero-copy">
           <p class="eyebrow">Software Engineer - San Francisco Bay Area, CA</p>
           <h1>
-            Hi, I’m <span>Nivetha</span>, a
-            <strong id="roleText">full-stack engineer</strong>.
+            Hi, I’m <span>Nivetha</span>.
+            <strong id="roleText">Full-Stack Software Engineer.</strong>
           </h1>
           <p class="hero-summary">
-            I build scalable web and mobile products across React, TypeScript,
-            Python, FastAPI, Firebase, and cloud infrastructure, with a strong
-            focus on AI-enabled workflows and product impact.
+            I build thoughtful web applications, APIs, and product experiences
+            across React, TypeScript, Python, FastAPI, Firebase, and cloud
+            infrastructure.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button primary" href="#projects">View Work</a>
             <a class="button secondary" href="./public/NivethaJayakumar_Resume.pdf">Resume</a>
             <a class="button secondary" href="https://github.com/nivethajay27">GitHub</a>
+            <a class="button secondary" href="https://linkedin.com/in/nivetha-jay">LinkedIn</a>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="Portfolio preview panel">
-          <div class="profile-orbit" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="hero-visual" aria-label="Illustrated developer workspace">
+          <div class="workspace-scene" aria-hidden="true">
+            <div class="workspace-doodle star-one">+</div>
+            <div class="workspace-doodle star-two">*</div>
+            <div class="workspace-doodle arrow-one">-&gt;</div>
+            <div class="sticky-note note-build">
+              <span>currently building</span>
+              <strong>AI workflows</strong>
+            </div>
+            <div class="sticky-note note-api">
+              <span>next up</span>
+              <strong>ship clean APIs</strong>
+            </div>
+            <div class="browser-window">
+              <div class="browser-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="browser-grid">
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+            </div>
+            <div class="server-stack">
+              <span></span>
+              <span></span>
+            </div>
+            <div class="laptop">
+              <div class="laptop-screen">
+                <div class="editor-header">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="code-line long"></div>
+                <div class="code-line medium"></div>
+                <div class="code-line short"></div>
+                <div class="code-line medium warm"></div>
+              </div>
+              <div class="laptop-base"></div>
+            </div>
+            <div class="terminal-card">
+              <div class="terminal-title">terminal</div>
+              <code>$ npm run build<span class="terminal-cursor"></span></code>
+            </div>
+            <div class="keyboard">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="coffee-mug">
+              <span></span>
+            </div>
+            <div class="desk-surface"></div>
           </div>
-          <div class="profile-card">
-            <div class="avatar-frame magnet-frame" data-magnet>
-              <img class="magnet-image" src="./assets/nivetha-3d-avatar.jpeg" alt="Nivetha Jayakumar" />
-            </div>
-            <div>
-              <p class="profile-label">Current focus</p>
-              <h2>AI Software Engineer</h2>
-              <p>
-                Founding engineer experience across product strategy, realtime apps,
-                APIs, analytics, and LLM-powered features.
-              </p>
-            </div>
+          <div class="workspace-caption">
+            <p class="profile-label">Current focus</p>
+            <h2>AI Software Engineer</h2>
+            <p>
+              Founding engineer experience across product strategy, realtime apps,
+              APIs, analytics, and LLM-powered features.
+            </p>
           </div>
         </div>
       </section>
 
-      <section class="section-band split-section" id="about">
-        <div>
+      <section class="section-band about-versions" id="about" aria-labelledby="aboutTitle">
+        <div class="about-copy">
           <p class="eyebrow">About</p>
-          <h2>Full-stack engineer with product instincts and AI systems experience.</h2>
-        </div>
-        <div class="section-copy">
+          <h2 id="aboutTitle">Different versions of Nivetha, same builder mindset.</h2>
           <p>
             I am a software engineer with experience building production web
             products, realtime mobile applications, automation dashboards, ML-backed
@@ -88,10 +140,219 @@
             Wizard, engineering at Cisco, and graduate work in computer science at
             Columbia University.
           </p>
-          <div class="impact-grid">
-            <div><strong>35%</strong><span>API latency reduction</span></div>
-            <div><strong>2000+</strong><span>Cisco engineers supported</span></div>
-            <div><strong>45%</strong><span>usability lift from analytics</span></div>
+        </div>
+
+        <div class="niv-carousel" aria-label="Versions of Nivetha">
+          <button class="version-arrow version-arrow-prev" id="versionPrev" type="button" aria-label="Previous version">
+            <span aria-hidden="true">←</span>
+          </button>
+
+          <div class="version-stage" id="versionStage" aria-live="polite">
+            <article class="version-card is-active" data-version-index="0">
+              <div class="version-portrait coding-version" aria-hidden="true">
+                <div class="version-doodle version-star">✦</div>
+                <div class="version-doodle version-squiggle">⌁</div>
+                <div class="niv-person">
+                  <span class="niv-hair"></span>
+                  <span class="niv-face"></span>
+                  <span class="niv-shirt"></span>
+                  <span class="niv-pants"></span>
+                  <span class="niv-feet"></span>
+                </div>
+                <div class="version-prop laptop-prop">
+                  <span></span>
+                  <code>const app = ship()</code>
+                </div>
+              </div>
+              <div class="version-copy">
+                <p class="profile-label">Coding Niv</p>
+                <h3>Building products</h3>
+                <p>Turns ideas into polished full-stack experiences.</p>
+              </div>
+            </article>
+
+            <article class="version-card" data-version-index="1" aria-hidden="true">
+              <div class="version-portrait designer-version" aria-hidden="true">
+                <div class="version-doodle version-star">✦</div>
+                <div class="version-doodle version-arrow-doodle">↗</div>
+                <div class="niv-person">
+                  <span class="niv-hair"></span>
+                  <span class="niv-face"></span>
+                  <span class="niv-shirt"></span>
+                  <span class="niv-pants"></span>
+                  <span class="niv-feet"></span>
+                </div>
+                <div class="version-prop design-board-prop">
+                  <strong>UI kit</strong>
+                  <span></span><span></span><span></span>
+                  <i></i><i></i>
+                </div>
+              </div>
+              <div class="version-copy">
+                <p class="profile-label">UI/UX Niv</p>
+                <h3>Designing interfaces</h3>
+                <p>Makes complex workflows feel clear and approachable.</p>
+              </div>
+            </article>
+
+            <article class="version-card" data-version-index="2" aria-hidden="true">
+              <div class="version-portrait backend-version" aria-hidden="true">
+                <div class="version-doodle version-sparkle">✧</div>
+                <div class="version-doodle version-arrow-doodle">↗</div>
+                <div class="niv-person">
+                  <span class="niv-hair"></span>
+                  <span class="niv-face"></span>
+                  <span class="niv-shirt"></span>
+                  <span class="niv-pants"></span>
+                  <span class="niv-feet"></span>
+                </div>
+                <div class="version-prop api-map-prop">
+                  <span>API</span>
+                  <span>DB</span>
+                  <span>Auth</span>
+                </div>
+              </div>
+              <div class="version-copy">
+                <p class="profile-label">Backend Niv</p>
+                <h3>Building APIs</h3>
+                <p>Connects data, services, and product logic cleanly.</p>
+              </div>
+            </article>
+
+            <article class="version-card" data-version-index="3" aria-hidden="true">
+              <div class="version-portrait ai-version" aria-hidden="true">
+                <div class="version-doodle version-star">✦</div>
+                <div class="version-doodle version-squiggle">⌁</div>
+                <div class="niv-person">
+                  <span class="niv-hair"></span>
+                  <span class="niv-face"></span>
+                  <span class="niv-shirt"></span>
+                  <span class="niv-pants"></span>
+                  <span class="niv-feet"></span>
+                </div>
+                <div class="version-prop ai-chat-prop">
+                  <span>AI</span>
+                  <p>summarize workflow</p>
+                  <i></i><i></i><i></i>
+                </div>
+              </div>
+              <div class="version-copy">
+                <p class="profile-label">AI Niv</p>
+                <h3>LLMs & automation</h3>
+                <p>Builds practical AI features around real user needs.</p>
+              </div>
+            </article>
+
+            <article class="version-card" data-version-index="4" aria-hidden="true">
+              <div class="version-portrait builder-version" aria-hidden="true">
+                <div class="version-doodle version-sparkle">✧</div>
+                <div class="version-doodle version-arrow-doodle">↗</div>
+                <div class="niv-person">
+                  <span class="niv-hair"></span>
+                  <span class="niv-face"></span>
+                  <span class="niv-shirt"></span>
+                  <span class="niv-pants"></span>
+                  <span class="niv-feet"></span>
+                </div>
+                <div class="version-prop folders-prop">
+                  <span>Portfolio</span>
+                  <span>Closet</span>
+                  <span>Expense</span>
+                </div>
+              </div>
+              <div class="version-copy">
+                <p class="profile-label">Builder Niv</p>
+                <h3>Personal projects</h3>
+                <p>Explores ideas quickly and turns them into usable apps.</p>
+              </div>
+            </article>
+
+            <article class="version-card" data-version-index="5" aria-hidden="true">
+              <div class="version-portrait debugger-version" aria-hidden="true">
+                <div class="version-doodle version-sparkle">✧</div>
+                <div class="version-doodle version-squiggle">⌁</div>
+                <div class="niv-person">
+                  <span class="niv-hair"></span>
+                  <span class="niv-face"></span>
+                  <span class="niv-shirt"></span>
+                  <span class="niv-pants"></span>
+                  <span class="niv-feet"></span>
+                </div>
+                <div class="version-prop magnifier-prop"></div>
+                <div class="version-prop debug-prop">
+                  <code>$ debug</code>
+                  <span>trace fixed</span>
+                </div>
+                <div class="version-prop duck-prop"></div>
+              </div>
+              <div class="version-copy">
+                <p class="profile-label">Debugger Niv</p>
+                <h3>Problem solving</h3>
+                <p>Finds the root cause and keeps systems moving.</p>
+              </div>
+            </article>
+
+            <article class="version-card" data-version-index="6" aria-hidden="true">
+              <div class="version-portrait student-version" aria-hidden="true">
+                <div class="version-doodle version-star">✦</div>
+                <div class="version-doodle version-squiggle">⌁</div>
+                <div class="niv-person">
+                  <span class="niv-hair"></span>
+                  <span class="niv-face"></span>
+                  <span class="niv-shirt"></span>
+                  <span class="niv-pants"></span>
+                  <span class="niv-feet"></span>
+                </div>
+                <div class="version-prop study-prop">
+                  <span>CS notes</span>
+                  <span>research</span>
+                  <span>systems</span>
+                </div>
+              </div>
+              <div class="version-copy">
+                <p class="profile-label">Student Niv</p>
+                <h3>Continuous learning</h3>
+                <p>Keeps growing through research, practice, and curiosity.</p>
+              </div>
+            </article>
+
+            <article class="version-card" data-version-index="7" aria-hidden="true">
+              <div class="version-portrait deploy-version" aria-hidden="true">
+                <div class="version-doodle version-sparkle">✧</div>
+                <div class="version-doodle version-arrow-doodle">↗</div>
+                <div class="niv-person">
+                  <span class="niv-hair"></span>
+                  <span class="niv-face"></span>
+                  <span class="niv-shirt"></span>
+                  <span class="niv-pants"></span>
+                  <span class="niv-feet"></span>
+                </div>
+                <div class="version-prop deploy-prop">
+                  <button type="button" tabindex="-1">Deploy</button>
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="version-copy">
+                <p class="profile-label">Deploy Niv</p>
+                <h3>Shipping to production</h3>
+                <p>Brings projects across the finish line with care.</p>
+              </div>
+            </article>
+          </div>
+
+          <button class="version-arrow version-arrow-next" id="versionNext" type="button" aria-label="Next version">
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <div class="version-dots" aria-label="Choose a version">
+            <button class="is-active" type="button" data-version-dot="0" aria-label="Show Coding Niv"></button>
+            <button type="button" data-version-dot="1" aria-label="Show UI/UX Niv"></button>
+            <button type="button" data-version-dot="2" aria-label="Show Backend Niv"></button>
+            <button type="button" data-version-dot="3" aria-label="Show AI Niv"></button>
+            <button type="button" data-version-dot="4" aria-label="Show Builder Niv"></button>
+            <button type="button" data-version-dot="5" aria-label="Show Debugger Niv"></button>
+            <button type="button" data-version-dot="6" aria-label="Show Student Niv"></button>
+            <button type="button" data-version-dot="7" aria-label="Show Deploy Niv"></button>
           </div>
         </div>
       </section>
@@ -107,9 +368,19 @@
       <section class="section-band" id="projects">
         <div class="section-heading">
           <p class="eyebrow">Projects</p>
-          <h2>Featured projects</h2>
+          <h2>Workstation</h2>
         </div>
-        <div class="project-grid" id="projectList"></div>
+        <div class="workstation" aria-label="Illustrated project workstation">
+          <div class="workstation-desk" id="projectObjectList" aria-label="Project objects"></div>
+          <section
+            class="project-panel"
+            id="projectPanel"
+            tabindex="-1"
+            aria-live="polite"
+            aria-label="Selected project details"
+          ></section>
+        </div>
+        <div class="mobile-project-list" id="projectList" aria-label="Project list"></div>
       </section>
 
       <section class="section-band skills-section" id="skills">
@@ -140,19 +411,40 @@
       </section>
 
       <section class="section-band contact-section" id="contact">
-        <div>
+        <div class="contact-copy">
           <p class="eyebrow">Contact</p>
-          <h2>Let’s build useful software.</h2>
+          <h2>Send a message to my inbox</h2>
           <p>
             I am interested in software engineering roles across full-stack product
             development, AI-enabled applications, and scalable web systems.
           </p>
+          <div class="contact-actions" id="contactActions">
+            <a class="button primary" href="mailto:nivethajayk@gmail.com">Email</a>
+            <a class="button secondary" href="https://linkedin.com/in/nivetha-jay">LinkedIn</a>
+            <a class="button secondary" href="https://github.com/nivethajay27">GitHub</a>
+            <a class="button secondary" href="./public/NivethaJayakumar_Resume.pdf">Resume</a>
+          </div>
         </div>
-        <div class="contact-actions">
-          <a class="button primary" href="mailto:nivethajayk@gmail.com">Email</a>
-          <a class="button secondary" href="https://github.com/nivethajay27">GitHub</a>
-          <a class="button secondary" href="https://linkedin.com/in/nivetha-jay">LinkedIn</a>
-        </div>
+        <button
+          class="mailbox-scene"
+          id="mailboxButton"
+          type="button"
+          aria-controls="contactActions"
+          aria-label="Focus contact actions"
+        >
+          <span class="mailbox-doodle mail-star" aria-hidden="true">+</span>
+          <span class="mailbox-doodle mail-arrow" aria-hidden="true">-&gt;</span>
+          <span class="mailbox-flag" aria-hidden="true"></span>
+          <span class="mailbox-body" aria-hidden="true">
+            <span class="mailbox-door"></span>
+            <span class="mailbox-slot"></span>
+          </span>
+          <span class="mailbox-post" aria-hidden="true"></span>
+          <span class="mailbox-envelope" aria-hidden="true">
+            <span></span>
+          </span>
+          <span class="mailbox-label">inbox</span>
+        </button>
       </section>
     </main>
 

@@ -1,0 +1,10 @@
+{
+  "name": "my-resume-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "node --check script.js && node --check tools/build.mjs",
+    "build": "node tools/build.mjs"
+  }
+}
