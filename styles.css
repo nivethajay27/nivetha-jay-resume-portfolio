@@ -2742,12 +2742,6 @@ h3 {
     width: min(100%, 34rem);
   }
 
-  .checkpoint-track {
-    inset: 2rem auto 2rem 2rem;
-    width: 0.25rem;
-    height: auto;
-  }
-
   .experience-checkpoints {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2797,7 +2791,7 @@ h3 {
 
 @media (max-width: 560px) {
   .section-band {
-    width: min(100% - 1rem, 1120px);
+    width: min(100% - 1.25rem, 1120px);
     padding: 3.5rem 0;
   }
 
@@ -2900,18 +2894,56 @@ h3 {
 
   .experience-checkpoints {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .experience-journey {
+    padding: 0.65rem;
+    overflow: visible;
+  }
+
+  .checkpoint-track {
+    display: none;
   }
 
   .experience-card {
     min-height: auto;
+    gap: 0.65rem;
+    padding: 0.75rem;
+    box-shadow: none;
+    translate: none;
   }
 
-  .experience-scene {
-    min-height: 10rem;
+  .experience-card::before {
+    inset: 0.35rem;
+  }
+
+  .experience-card.is-active {
+    box-shadow: none;
+    translate: none;
   }
 
   .company-sign {
+    grid-template-columns: auto minmax(0, 1fr);
     min-height: 3.4rem;
+    padding: 0.5rem 0.6rem;
+    box-shadow: 0 4px 0 color-mix(in srgb, var(--accent) 14%, transparent);
+  }
+
+  .company-sign span:last-child,
+  .experience-card-copy h3,
+  .experience-card-copy p {
+    overflow-wrap: anywhere;
+  }
+
+  .checkpoint-dot {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.58rem;
+  }
+
+  .experience-card > .experience-scene {
+    display: none;
   }
 
   .skills-grid {

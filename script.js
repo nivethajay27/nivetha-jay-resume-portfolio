@@ -557,6 +557,8 @@ function closeExperienceDialog() {
 
 function renderExperience() {
   const container = document.querySelector("#experienceList");
+  const shouldRenderScenes = !window.matchMedia("(max-width: 700px)").matches;
+
   container.innerHTML = `
     <div class="experience-journey" aria-label="Experience journey checkpoints">
       <div class="checkpoint-track" aria-hidden="true"></div>
@@ -568,7 +570,7 @@ function renderExperience() {
 
             return `
               <article class="experience-card experience-card-${theme}" data-experience-index="${index}">
-                ${renderExperienceScene(theme, company)}
+                ${shouldRenderScenes ? renderExperienceScene(theme, company) : ""}
                 <button
                   class="company-sign"
                   type="button"
@@ -617,7 +619,9 @@ function renderExperience() {
     </div>
   `;
 
-  renderExperienceDetails(activeExperienceIndex);
+  document.querySelectorAll(".experience-card").forEach((card) => {
+    card.classList.remove("is-active");
+  });
 }
 
 function renderProjects() {
@@ -956,9 +960,18 @@ function bindMailboxInteraction() {
 }
 
 function revealOnScroll() {
+  const isMobileViewport = window.matchMedia("(max-width: 700px)").matches;
   const revealItems = document.querySelectorAll(
-    ".section-band, .experience-card, .project-object, .project-panel, .project-card, .skill-card, .education-list article",
+    isMobileViewport
+      ? ".section-band, .project-object, .project-panel, .project-card, .skill-card, .education-list article"
+      : ".section-band, .experience-card, .project-object, .project-panel, .project-card, .skill-card, .education-list article",
   );
+
+  if (isMobileViewport) {
+    document.querySelectorAll(".experience-card").forEach((item) => {
+      item.classList.add("is-visible");
+    });
+  }
 
   if (!("IntersectionObserver" in window)) {
     revealItems.forEach((item) => item.classList.add("is-visible"));
